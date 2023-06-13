@@ -11,8 +11,16 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+const filePath1 = path.join(__dirname, ".env");
+
+require("dotenv").config({ path: filePath1 });
+
+global.INV = process.env.INV;
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/all", require("./routes/props"));
+app.use("/api/des", require("./routes/descrip"));
+// app.use("/api/busqueda", require("./routes/busqueda"));
 
 const port = process.env.PORT || 9001;
 app.listen(port, () => console.log(`Listening to port ${port}`));
