@@ -3,7 +3,7 @@ const router = new Router();
 
 const fetch = require("node-fetch");
 
-router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
   // const id = req.params.id;
 
   // const url =
