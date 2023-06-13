@@ -12,7 +12,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/hola", require("./routes/props"));
+app.use("/api/all", require("./routes/props"));
 
 const port = process.env.PORT || 9001;
 app.listen(port, () => console.log(`Listening to port ${port}`));
