@@ -20,7 +20,13 @@ global.INV = process.env.INV;
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/all", require("./routes/props"));
 app.use("/api/des", require("./routes/descrip"));
-// app.use("/api/busqueda", require("./routes/busqueda"));
+app.use("/api/busqueda", require("./routes/busqueda"));
+app.use("/api/agregar", require("./routes/agrega"));
+app.use("/api/contacto", require("./routes/contactame"));
+app.use("/api/contactanos", require("./routes/contactanos"));
+app.use("/api/locali", require("./routes/localizacion"));
+app.use("/api/agreimg", require("./routes/agreimg"));
+app.use("/api/ameni", require("./routes/agreamenidades"));
 
 const port = process.env.PORT || 9001;
 app.listen(port, () => console.log(`Listening to port ${port}`));
