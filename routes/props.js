@@ -2,6 +2,11 @@ const { Router } = require("express");
 const router = new Router();
 
 const fetch = require("node-fetch");
+const path = require("path");
+
+const filePath1 = path.join(__dirname, "./.env");
+
+require("dotenv").config({ path: filePath1 });
 
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
@@ -14,7 +19,9 @@ router.get("/:id", async (req, res) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      "X-Authorization": "bsytg8rgtuuhm952r71yp0lxs9y46k",
+      "X-Authorization": process.env.INV,
+
+      // "bsytg8rgtuuhm952r71yp0lxs9y46k",
     },
   };
 
@@ -22,6 +29,8 @@ router.get("/:id", async (req, res) => {
     .then((rese) => rese.json())
     .then((json) => res.json(json))
     .catch((err) => console.error("error:" + err));
+
+  // console.log(process.env.INV);
 });
 
 module.exports = router;
