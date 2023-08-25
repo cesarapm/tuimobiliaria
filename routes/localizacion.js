@@ -4,13 +4,7 @@ const router = new Router();
 const fetch = require("node-fetch");
 
 router.get("/", async (req, res) => {
-  let ids1 = req.query.re1;
-  let ids2 = req.query.re2;
-  let ids3 = req.query.re3;
-
-  datos = [];
-  const url =
-    "https://api.easybroker.com/v1/properties?page=1&limit=20&search[location_name]=Yucatan";
+  const url = `https://api.easybroker.com/v1/locations?query=${req.query.miParametro}`;
   const options = {
     method: "GET",
     headers: {
