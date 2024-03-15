@@ -27,6 +27,7 @@ app.use("/api/contactanos", require("./routes/contactanos"));
 app.use("/api/locali", require("./routes/localizacion"));
 app.use("/api/agreimg", require("./routes/agreimg"));
 app.use("/api/ameni", require("./routes/agreamenidades"));
+app.use("/api/buzon", require("./routes/buzon"));
 
 const port = process.env.PORT || 9001;
 app.listen(port, () => console.log(`Listening to port ${port}`));
