@@ -4,7 +4,7 @@ const router = new Router();
 const fetch = require("node-fetch");
 
 router.get("/", async (req, res) => {
-console.log(req.query);
+// console.log(req.query);
 
     
   let ids1 = req.query.re1;
