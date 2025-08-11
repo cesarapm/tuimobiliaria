@@ -4,6 +4,9 @@ const router = new Router();
 const fetch = require("node-fetch");
 
 router.get("/", async (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://crm.tpi.com.mx");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   const url = "https://api.easybroker.com/v1/properties";
   const options = {
     method: "POST",
@@ -28,8 +31,8 @@ router.get("/", async (req, res) => {
         interior_number: req.query.numI_ubi,
         cross_street: req.query.cru_ubi,
         postal_code: req.query.cp_ubi,
-        lat: req.query.latitud, // <-- Aquí agregas latitud
-        lng: req.query.longitud,
+ lat: req.query.latitud, // <-- latitud aquí
+  lng: req.query.longitud,
       },
       // features: ["Penthouse", "Terraza", "Planta eléctrica"],
       // images: [
