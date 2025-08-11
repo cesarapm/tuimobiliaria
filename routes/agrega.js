@@ -28,6 +28,8 @@ router.get("/", async (req, res) => {
         interior_number: req.query.numI_ubi,
         cross_street: req.query.cru_ubi,
         postal_code: req.query.cp_ubi,
+        lat: req.query.latitud, // <-- Aquí agregas latitud
+        lng: req.query.longitud,
       },
       // features: ["Penthouse", "Terraza", "Planta eléctrica"],
       // images: [
@@ -47,6 +49,9 @@ router.get("/", async (req, res) => {
       parking_spaces: req.query.estacionamiento,
       floors: req.query.pisos,
       expenses: req.query.gastos,
+
+      latitud: data.latitud,
+      longitud: data.longitud,
 
       share_commission: true,
       collaboration_notes:
